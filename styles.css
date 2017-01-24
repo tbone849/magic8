@@ -1,5 +1,40 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+html {
+	background-color: black;
+	padding: 1em;
+}
+
+.inner-circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: white;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 40vh;
+	width: 50vh;
+	height: 50vh;
+	border-radius: 50%;
+}
+
+.question-input {
+	color: white;
+	font-size: 5vh;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid white;
+	background-color: inherit;
+	margin-right: 0;
+}
+
+.question-submit {
+	font-size: 5vh;
+	background-color: white;
+	border: none;
+	margin-left: 0;
 }
