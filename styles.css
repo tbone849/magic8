@@ -30,11 +30,18 @@ html {
 	border-bottom: 1px solid white;
 	background-color: inherit;
 	margin-right: 0;
+	padding-left: .5em;
 }
 
 .question-submit {
 	font-size: 5vh;
+	padding-left: 1em;
+	padding-right: .5em;
 	background-color: white;
 	border: none;
-	margin-left: 0;
+	border-bottom: 1px solid white;
+	-webkit-border-radius: 10px 10px 10px 0;
+	border-radius: 10px 10px 10px 0;
+	-webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
 }

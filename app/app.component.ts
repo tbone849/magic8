@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
-
+import { Question } from './question.component';
+import { EightBall } from './eight-ball.component';
 
 
 @Component({
-  selector: 'my-app',
+  selector: 'app',
   template: `
-  			<div class='ball'>
-  				<input class='question-input' type='text' placeholder='Ask a yes or no question'><button class='question-submit'>Ask</button>
-  				<div class='inner-circle'>8</div>
-  			</div>
+  			<question-input 
+  				inputPlaceholder='Ask a question'
+  				buttonLabel='Ask'
+  				(onSubmit)='askedQuestion($event)'>
+  			</question-input>
+			<eight-ball *ngIf='!hideBall'></eight-ball>
   			`
 })
-export class AppComponent  {}
+export class AppComponent  {
+	hideBall = false
+	askedQuestion(asked: boolean){
+		this.hideBall = asked;
+		console.log('question asked: ', asked)
+	}
+}
