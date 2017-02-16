@@ -1,9 +1,21 @@
 html {
-	background-color: black;
+	height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(28,28,28,1))); /* safari4+,chrome */
+	background:-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%); /* ie10+ */
+	background:radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1C1C1C',GradientType=1 ); /* ie6-9 */
 	padding: 1em;
 }
 
-.inner-circle {
+.eight {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -20,6 +32,51 @@ html {
 	width: 50vh;
 	height: 50vh;
 	border-radius: 50%;
+}
+
+.circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: black;
+	width: 40vh;
+	height: 40vh;
+	border: 5px solid #545454;
+	border-radius: 50%
+}
+
+.triangle {
+	position: relative;
+	width: 75%;
+	height: 75%;
+	margin: auto;
+	top: 4%;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(39,45,207,1) 0%, rgba(28,28,28,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(39,45,207,1)), color-stop(100%, rgba(28,28,28,1))); /* safari4+,chrome */
+	background:-webkit-radial-gradient(center, ellipse cover, rgba(39,45,207,1) 0%, rgba(28,28,28,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(39,45,207,1) 0%, rgba(28,28,28,1) 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(39,45,207,1) 0%, rgba(28,28,28,1) 100%); /* ie10+ */
+	background:radial-gradient(ellipse at center, rgba(39,45,207,1) 0%, rgba(28,28,28,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272DCF', endColorstr='#1C1C1C',GradientType=1 ); /* ie6-9 */
+	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.message {
+	font-family: arial;
+	position: relative;
+	color: white;
+	text-align: center;
+	height: 45%;
+	margin: auto;
+	width: 45%;
+	top: 50%;
+	font-size: 2.25vh;
 }
 
 .question-input {
