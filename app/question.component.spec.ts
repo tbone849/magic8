@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { Question } from './question.component';
 
@@ -14,6 +15,7 @@ describe('Question component', () => {
   beforeEach( async(() => {
     TestBed.configureTestingModule({
       declarations: [ Question ], // declare the test component
+      imports: [FormsModule]
     })
     .compileComponents();
   }));

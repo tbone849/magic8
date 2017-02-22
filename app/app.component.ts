@@ -10,22 +10,36 @@ import { Answer } from './answer.component';
   providers: [AnswersService],
   template: `
   			<question-input 
-  				inputPlaceholder='Ask a question'
-  				buttonLabel='Ask'
+          *ngIf='showInput'
+  				inputPlaceholder='Ask your question...'
+  				buttonLabel='Ask the mystic 8 ball'
   				(onSubmit)='askedQuestion($event)'>
   			</question-input>
-			  <eight-ball *ngIf='!hideBall'></eight-ball>
-        <answer message='{{answer}}'></answer>
+			  <eight-ball *ngIf='showEight'></eight-ball>
+        <answer *ngIf='showAnswer' message='{{answer}}'></answer>
+        <div class='center'>
+          <div class='reset' *ngIf='showAnswer' (click)='reset()'>Ask Another Question</div>
+        </div>
   			`
 })
 export class AppComponent  {
   constructor(private answersService: AnswersService){}
   answer:string;
-	hideBall = false;
-	askedQuestion(asked: boolean){
-		this.hideBall = asked;
+  showEight = false;
+  showAnswer = false;
+  showInput = true;
+	askedQuestion(question: string){
+		this.showInput = false;
+    this.showEight = true;
     this.answer = this.answersService.getAnswer();
-    console.log(this.answer);
-		console.log('question asked: ', asked)
+    setTimeout(() => {
+      this.showAnswer = true;
+      this.showEight = false;
+    }, 3000);
 	}
+  reset(){
+    this.showAnswer = false;
+    this.showEight = false;
+    this.showInput = true;
+  }
 }

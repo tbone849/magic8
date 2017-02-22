@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatica+SC:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://use.fontawesome.com/5b58cfeacd.js"></script>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
+    
     <script src="systemjs.config.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err); });
@@ -19,6 +22,6 @@
   </head>
 
   <body>
-    <app>Loading AppComponent content here ...</app>
+    <app><span style='color:#a5a5a5; font-size:2em'><i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw" ></i> Loading something awesome</span></app>
   </body>
 </html>

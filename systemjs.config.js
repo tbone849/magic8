@@ -26,7 +26,7 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'animator': 'npm:css-animator/bundles/css-animator.min.js'
+      'css-animator': 'npm:css-animator'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -36,7 +36,8 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+      'css-animator': { main: 'index.js', defaultExtension: 'js' }
     }
   });
 })(this);

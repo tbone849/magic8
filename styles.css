@@ -1,5 +1,6 @@
 html {
 	height: 100%;
+	font-family: 'Amatica SC', cursive;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -17,6 +18,7 @@ html {
 
 .eight {
 	position: absolute;
+	font-family: times;
 	top: 50%;
 	left: 50%;
 	margin: auto;
@@ -46,7 +48,7 @@ html {
 	background-color: black;
 	width: 40vh;
 	height: 40vh;
-	border: 5px solid #545454;
+	border: 2px solid #545454;
 	border-radius: 50%
 }
 
@@ -68,37 +70,52 @@ html {
 }
 
 .message {
-	font-family: arial;
 	position: relative;
+	font-weight: bold;
 	color: white;
 	text-align: center;
 	height: 45%;
 	margin: auto;
 	width: 45%;
 	top: 50%;
-	font-size: 2.25vh;
+	font-size: 2.45vh;
 }
 
 .question-input {
+	font-family: 'Amatica SC', cursive;
 	color: white;
-	font-size: 5vh;
+	font-size: 10vw;
 	outline: none;
 	border: none;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid #a5a5a5;
 	background-color: inherit;
-	margin-right: 0;
 	padding-left: .5em;
+	width: 75%;
+	margin-bottom: 1em;
 }
 
 .question-submit {
-	font-size: 5vh;
-	padding-left: 1em;
-	padding-right: .5em;
-	background-color: white;
-	border: none;
-	border-bottom: 1px solid white;
-	-webkit-border-radius: 10px 10px 10px 0;
-	border-radius: 10px 10px 10px 0;
-	-webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
-	clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+	font-size: 5vw;
+	background-color: #ffb65e;
+	padding: .25em;
+	text-align: center;
+	display: inline-block;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.reset {
+	background-color: #ffb65e;
+	font-size: 3vh;
+	display: inline-block;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	visibility:hidden;
 }
