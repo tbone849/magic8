@@ -1,15 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+let Velocity = require('../node_modules/velocity-animate/velocity.min.js');
 let $ = require('../node_modules/jquery/dist/jquery.min.js')
 
 @Component({
 	selector: 'question-input',
 	template: `
-			<div class='center'>
+			<div class='center question-container'>
 				<input [(ngModel)]='question' class='question-input' type='text' [placeholder]='inputPlaceholder'
 					(ngModelChange)='onChange($event)'>
 				<div 
-					class='question-submit hidden'
+					class='question-submit'
 					(click)='submit(question); question = "";'>
 					{{buttonLabel}}
 				</div>
@@ -26,12 +27,12 @@ export class Question{
 		this.onSubmit.emit(question);
 	}
 	onChange(newValue:string){
-		if(newValue.length){
-			$(".question-submit").removeClass("hidden");
-			$(".question-submit").addClass("fadeIn animated");
-		} else {
-			$(".question-submit").removeClass("fadeIn animated");
-			$(".question-submit").addClass("hidden");
+		if(newValue.length && this.showSubmit === false){
+			this.showSubmit = true;
+			$('.question-submit').velocity('fadeIn', { display: 'inline-block',duration: 1500});
+		} else if(!newValue.length) {
+			this.showSubmit = false;
+			$('.question-submit').hide();
 		}
 	}
 }

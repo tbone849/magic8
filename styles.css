@@ -27,7 +27,8 @@ html {
 	bottom: 0;
 	right: 0;
 	background-color: white;
-	display: table-cell;
+	display: none;
+	/*display: table-cell;*/
 	text-align: center;
 	vertical-align: middle;
 	font-size: 40vh;
@@ -99,15 +100,16 @@ html {
 	background-color: #ffb65e;
 	padding: .25em;
 	text-align: center;
-	display: inline-block;
+	display: none;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
 }
 
-.reset {
+#reset {
 	background-color: #ffb65e;
 	font-size: 3vh;
-	display: inline-block;
+	display: none;
+	/*display: inline-block;*/
 	padding: 1em;
 	margin-top: 1em;
 }
@@ -116,6 +118,6 @@ html {
 	text-align: center;
 }
 
-.hidden {
-	visibility:hidden;
+.answer-container {
+	display: none;
 }
