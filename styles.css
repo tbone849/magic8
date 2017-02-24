@@ -1,5 +1,6 @@
 html {
 	height: 100%;
+	overflow: hidden;
 	font-family: 'Amatica SC', cursive;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -54,6 +55,7 @@ html {
 }
 
 .triangle {
+	display: none;
 	position: relative;
 	width: 75%;
 	height: 75%;
@@ -101,8 +103,7 @@ html {
 	padding: .25em;
 	text-align: center;
 	display: none;
-	-webkit-border-radius: 20px;
-	border-radius: 20px;
+	cursor: pointer;
 }
 
 #reset {
@@ -112,6 +113,7 @@ html {
 	/*display: inline-block;*/
 	padding: 1em;
 	margin-top: 1em;
+	cursor: pointer;
 }
 
 .center {
@@ -120,4 +122,9 @@ html {
 
 .answer-container {
 	display: none;
+}
+
+.reset-container {
+	position: absolute;
+	top: 0;
 }
