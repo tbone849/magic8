@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-let Velocity = require('../node_modules/velocity-animate/velocity.min.js');
-let $ = require('../node_modules/jquery/dist/jquery.min.js')
+import * as Velocity from 'velocity-animate';
+import * as $ from 'jquery';
 
 @Component({
 	selector: 'question-input',

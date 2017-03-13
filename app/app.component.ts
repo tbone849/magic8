@@ -4,8 +4,8 @@ import { EightBall } from './eight-ball.component';
 import { AnswersService } from './answers.service';
 import { Answer } from './answer.component';
 import * as $ from 'jquery';
-import * as Velocity from 'velocity';
-require('../node_modules/velocity-animate/velocity.ui.min.js');
+import * as Velocity from 'velocity-animate';
+require('node_modules/velocity-animate/velocity.ui.min.js');
 
 @Component({
   selector: 'app',
