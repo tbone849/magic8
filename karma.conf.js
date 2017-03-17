@@ -5,8 +5,8 @@ module.exports = function(config) {
   var appAssets  = '/base/app/'; // component assets fetched by Angular's compiler
 
   // Testing helpers (optional) are conventionally in a folder called `testing`
-  var testingBase    = 'testing/'; // transpiled test JS and map files
-  var testingSrcBase = 'testing/'; // test source TS files
+  var testingBase    = 'app/'; // transpiled test JS and map files
+  var testingSrcBase = 'app/'; // test source TS files
 
   config.set({
     basePath: '',
@@ -47,6 +47,8 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
+      'node_modules/velocity-animate/velocity.min.js',
+      'node_modules/jquery/dist/jquery.min.js',
 
       // RxJs
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
@@ -68,8 +70,8 @@ module.exports = function(config) {
 
       // Asset (HTML & CSS) paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
-      { pattern: appBase + '**/*.html', included: false, watched: true },
-      { pattern: appBase + '**/*.css', included: false, watched: true },
+      { pattern: '*.html', included: false, watched: true },
+      { pattern: '*.css', included: false, watched: true },
 
       // Paths for debugging with source maps in dev tools
       { pattern: appSrcBase + '**/*.ts', included: false, watched: false },

@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var tsProject = ts.createProject('tsconfig.json');
 var copyNodeModule = require('copy-node-modules');
 var connect = require('gulp-connect');
+var Server = require('karma').Server;
 
 gulp.task('connect', function(){
 	connect.server({
@@ -24,6 +25,10 @@ gulp.task('watch', function(){
 
 });
 
+gulp.task('watchSpecs', function(){
+	gulp.watch(['app/**/*.spec.ts'], ['test']);
+});
+
 gulp.task('scripts', function(){
 	var tsResult = gulp.src(['!app/**/*.spec.ts','app/**/*.ts'])
 		.pipe(sourcemaps.init())
@@ -32,6 +37,21 @@ gulp.task('scripts', function(){
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist/app'))
 		.pipe(connect.reload());
+});
+
+gulp.task('test', function(){
+	var tsResult = gulp.src(['app/**/*.spec.ts'])
+		.pipe(sourcemaps.init())
+		.pipe(tsProject());
+	return tsResult.js
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('app'));
+});
+
+gulp.task('karma', ['test', 'watchSpecs'], function(done){
+	new Server({
+    configFile: require('path').resolve('karma.conf.js')
+  }, done).start();
 });
 
 gulp.task('index', function(){

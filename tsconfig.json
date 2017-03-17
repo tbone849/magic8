@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist/app",
+    "outDir": "/app",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -11,5 +11,5 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules, dist"]
 }

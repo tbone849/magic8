@@ -11,6 +11,8 @@ describe('Question component', () => {
   let fixture: ComponentFixture<Question>;
   let de:      DebugElement;
   let el:      HTMLElement;
+  let submit: HTMLElement;
+  let question: HTMLInputElement;
 
   beforeEach( async(() => {
     TestBed.configureTestingModule({
@@ -28,8 +30,8 @@ describe('Question component', () => {
     comp.inputPlaceholder = 'Ask a question';
     comp.buttonLabel = 'Ask';
     // query for the title <h1> by CSS element selector
-    de = fixture.debugElement.query(By.css('.question-submit'));
-    el = de.nativeElement;
+    question = fixture.debugElement.query(By.css('.question-input')).nativeElement;
+    submit = fixture.debugElement.query(By.css('.question-submit')).nativeElement;
     fixture.detectChanges();
   });
 
@@ -38,13 +40,15 @@ describe('Question component', () => {
   })
 
   it('should have a button label', () => {
-    expect(el.textContent).toContain(comp.buttonLabel);
+    expect(submit.textContent).toContain(comp.buttonLabel);
   })
 
   it('should send an event when clicked', () => {
-    let isSubmitted = false;
-    comp.onSubmit.subscribe((submitted: boolean) => isSubmitted = submitted);
-    de.triggerEventHandler('click');
-    expect(isSubmitted).toBe(true);
+    let isSubmitted = '';
+    fixture.debugElement.componentInstance.question = 'Am I doing this right?';
+    fixture.detectChanges();
+    comp.onSubmit.subscribe((submitted: string) => isSubmitted = submitted);
+    fixture.debugElement.query(By.css('.question-submit')).triggerEventHandler('click', null);
+    expect(isSubmitted).toBe('Am I doing this right?');
   })
 });
